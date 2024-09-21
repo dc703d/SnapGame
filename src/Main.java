@@ -1,10 +1,16 @@
 
 public class Main {
     public static void main(String[] args) {
+        Snap snap = new Snap();
+        snap.shuffleDeck(snap.returnDeck());
+        snap.getFirstCard();
 
-        System.out.println("Hello world!");
-        CardGame game = new CardGame("blackjack");
-        game.getDeck();
-        
+        while(snap.win != true) {
+            snap.getCard();
+        }
+
+
+
     }
+
 }

@@ -13,4 +13,16 @@ public class Card {
     public String toString(){
         return(String.format("Suit: %s, Symbol: %s, Value: %d",suit,symbol,value));
     }
+
+    public int getValue(){
+        return this.value;
+    }
+
+    public String getSuit(){
+        return this.suit;
+    }
+
+    public String getSymbol(){
+        return this.symbol;
+    }
 }
