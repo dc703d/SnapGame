@@ -1,17 +1,20 @@
+import org.w3c.dom.ls.LSOutput;
+
 import java.util.Scanner;
 import java.util.Timer;
 import java.util.TimerTask;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 public class Snap extends CardGame{
-    private Card previousCard;
-    private Player player1 = new Player("Player 1");
-    private Player player2 = new Player("Player 2");
-    private AtomicBoolean gameOver = new AtomicBoolean(false);
-    private final int TIMER_TIME = 2000;
-    private Player previousPlayer = player2;
     Scanner scanner = new Scanner(System.in);
     Timer timer = new Timer();
+    private Card previousCard;
+    private AtomicBoolean gameOver = new AtomicBoolean(false);
+    private final int TIMER_TIME = 2000;
+    private Player player1;
+    private Player player2;
+    private Player previousPlayer;
+
     Snap() {
         super("Snap");
     }
@@ -48,18 +51,18 @@ public class Snap extends CardGame{
 
     public void getCard(){
         if(previousPlayer.getName() == player2.getName()) {
-            System.out.println("Player 1, please take a card.");
+            System.out.println( player1.getName() + ", please take a card.");
             scanner.nextLine();
             Card removedCard = this.dealCard();
-            System.out.println("Player 1's Card: " + removedCard);
+            System.out.println(player1.getName()+"'s Card: " + removedCard);
             previousPlayer = player1;
             checkWin(removedCard);
         }
         else if(previousPlayer.getName() == player1.getName()){
-            System.out.println("Player 2, please take a card.");
+            System.out.println(player2.getName() + ", please take a card.");
             player2.takeTurn();
             Card removedCard = this.dealCard();
-            System.out.println("Player 2's Card: " + removedCard);
+            System.out.println(player2.getName() + "'s Card: " + removedCard);
             previousPlayer = player2;
             checkWin(removedCard);
         }
@@ -72,6 +75,13 @@ public class Snap extends CardGame{
     }
     public AtomicBoolean getWin(){
         return this.gameOver;
+    }
+    public void makePlayers(){
+        System.out.println("Please enter Player 1's name.");
+        player1 = new Player(scanner.nextLine());
+        System.out.println("Please enter Player 2's name.");
+        player2 = new Player(scanner.nextLine());
+        previousPlayer=player2;
     }
 
 }
