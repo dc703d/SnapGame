@@ -5,9 +5,12 @@ public class Main {
         snap.shuffleDeck(snap.returnDeck());
         snap.getFirstCard();
 
-        while(snap.win != true) {
+        while(snap.getWin().get() != true) {
             snap.getCard();
         }
+
+
+
 
 
 

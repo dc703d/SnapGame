@@ -34,6 +34,7 @@ public class CardGame{
         this.deck.removeFirst();
         return topCard;
     }
+
     public void sortDeckInNumberOrder(ArrayList<Card> deck){
         Collections.sort(deck, new Comparator<Card>() {
             @Override
