@@ -15,12 +15,6 @@ public class CardGame{
         populateDeck();
     }
 
-    public void printDeck() {
-        for (int i = 0; i < deck.size(); i++) {
-            System.out.println(deck.get(i));
-        }
-    }
-
     public void populateDeck(){
         for(int i=0;i<4;i++){
             for(int j =0;j<symbols.length;j++){
