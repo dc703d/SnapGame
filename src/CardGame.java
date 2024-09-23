@@ -70,4 +70,8 @@ public class CardGame{
 
         }
     }
+
+    public int getArrayListLength(){
+        return this.deck.size();
+    }
 }

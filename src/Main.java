@@ -7,6 +7,9 @@ public class Main {
         snap.getFirstCard();
         while(snap.getWin().get() != true) {
             snap.getCard();
+            if(snap.getArrayListLength() < 1){
+                snap.shuffleDeck(snap.returnDeck());
+            }
         }
     }
 

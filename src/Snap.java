@@ -84,4 +84,5 @@ public class Snap extends CardGame{
         previousPlayer=player2;
     }
 
+
 }
