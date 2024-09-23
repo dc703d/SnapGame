@@ -7,10 +7,14 @@ public class Main {
         snap.getFirstCard();
         while(snap.getWin().get() != true) {
             snap.getCard();
+            System.out.println(snap.getArrayListLength());
             if(snap.getArrayListLength() < 1){
+                System.out.println("Reshuffling Deck...");
+                snap.populateDeck();
                 snap.shuffleDeck(snap.returnDeck());
             }
         }
     }
+
 
 }
